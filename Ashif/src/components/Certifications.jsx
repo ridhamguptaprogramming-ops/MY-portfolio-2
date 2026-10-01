@@ -24,10 +24,10 @@ export default function Certifications() {
               >
                 <Folder element="My Certifications" value="Certifications">
                   <Folder element="Cisco" value="Cisco">
-                    <File value="Cisco-Intro">
-                      <p>Introduction to Cybersecurity</p>
+                    <File value="">
+                      <p></p>
                     </File>
-                    <File value="Cisco-Jr">
+                    <File value="NASA-OpenScience">
                       <p>NASA Open Science 101</p>
                     </File>
                   </Folder>
