@@ -42,7 +42,7 @@ export default function Education() {
                 </Folder>
               </Folder>
                 <Folder element="My Certifications" value="Certifications">
-                  <Folder element="Cisco" value="Cisco">
+                  <Folder element="NASA" value="NASA">
                     <File value="Cisco-Intro">
                       <p>NASA Open Science 101</p>
                     </File>
