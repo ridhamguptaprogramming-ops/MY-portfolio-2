@@ -52,11 +52,6 @@ export default function Education() {
                       <p>Project Based Learning - FSD</p>
                     </File>
                   </Folder>
-                  <Folder element="AWS" value="AWS">
-                    <File value="AWS-Cloud">
-                      <p>Cloud Foundations (AWS Academy Graduate)</p>
-                    </File>
-                  </Folder>
                 </Folder>
             </Tree>
           </div>

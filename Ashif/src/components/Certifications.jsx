@@ -20,10 +20,10 @@ export default function Certifications() {
             <div className="relative flex max-w-lg mx-auto flex-col items-center justify-center overflow-hidden rounded-lg border bg-background p-4">
               <Tree
                 className="w-full bg-background overflow-hidden rounded-md"
-                initialExpandedItems={["Certifications", "Cisco", "IBM", "AWS"]}
+                initialExpandedItems={["Certifications", "NASA", "IBM",]}
               >
                 <Folder element="My Certifications" value="Certifications">
-                  <Folder element="Cisco" value="Cisco">
+                  <Folder element="NASA" value="NASA">
                     <File value="">
                       <p></p>
                     </File>
@@ -36,11 +36,6 @@ export default function Certifications() {
                       <p>Project Based Learning - FSD</p>
                     </File>
                   </Folder>
-                  {/* <Folder element="AWS" value="AWS">
-                    <File value="AWS-Cloud">
-                      <p>Cloud Foundations (AWS Academy Graduate)</p>
-                    </File>
-                  </Folder> */}
                 </Folder>
               </Tree>
             </div>
