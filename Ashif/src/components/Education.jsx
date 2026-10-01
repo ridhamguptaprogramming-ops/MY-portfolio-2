@@ -46,13 +46,10 @@ export default function Education() {
                     <File value="NASA-Intro">
                       <p>NASA Open Science 101</p>
                     </File>
-                    <File value="Cisco-Jr">
-                      <p>Jr. Cybersecurity Analyst</p>
-                    </File>
                   </Folder>
                   <Folder element="IBM" value="IBM">
-                    <File value="IBM-Python">
-                      <p>Python 101 for Data Science</p>
+                    <File value="IBM">
+                      <p>Project Based Learning - FSD</p>
                     </File>
                   </Folder>
                   <Folder element="AWS" value="AWS">
