@@ -35,8 +35,8 @@ const projectData = [
     {
         title: 'Portfolio Website',
         description: 'My personal portfolio website built with React and Tailwind CSS.',
-        // videoUrl: 'https://res.cloudinary.com/dktapziq9/video/upload/v1764395075/1764395026924189_ij9257.mov',
-        imageUrl: 'https://kommodo.ai/i/ILTjNiwHwTplZuzsTD3u',
+        videoUrl: 'https://res.cloudinary.com/dktapziq9/video/upload/v1764395075/1764395026924189_ij9257.mov',
+        imageUrl: project7Img,
         liveUrl: 'https://codearena-compiler.vercel.app',
         repoUrl: 'https://github.com/ridhamguptaprogramming-ops/CodeArena-Community',
         tags: ['TypeScript', 'Java', 'CSS', 'javaScript'],
