@@ -34,7 +34,7 @@ const projectData = [
     },
     {
         title: 'CodeArena-Community',
-        description: 'Secure Online Coding Assessment Platform and Online Compiler for students, teachers, and developers.Supports multi-language code execution,problem solving,submissions,contests,and real-time coding analytics.',
+        description: 'Secure Online Coding Assessment Platform and Online Compiler for students, teachers, and developers.',
         videoUrl: 'https://res.cloudinary.com/dktapziq9/video/upload/v1764395075/1764395026924189_ij9257.mov',
         imageUrl: project7Img,
         liveUrl: 'https://codearena-compiler.vercel.app',
