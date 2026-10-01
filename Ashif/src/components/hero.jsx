@@ -8,7 +8,7 @@ import { WordRotate } from "@/components/ui/word-rotate";
  * A modern, minimal hero section component.
  */
 export default function Hero() {
-  const skills = ['UI/UX Designer', 'Frontend Developer', 'Backend Developer', 'Creative Coder'];
+  const skills = ['Frontend Developer', 'Frontend Developer', 'Backend Developer', 'Backend Developer'];
   const greetings = ["Hello", "Hola", "Ciao", "مرحبا"];
 
   return (
