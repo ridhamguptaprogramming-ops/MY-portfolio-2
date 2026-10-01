@@ -28,19 +28,19 @@ export default function Certifications() {
                       <p>Introduction to Cybersecurity</p>
                     </File>
                     <File value="Cisco-Jr">
-                      <p>Jr. Cybersecurity Analyst</p>
+                      <p>NASA Open Science 101</p>
                     </File>
                   </Folder>
                   <Folder element="IBM" value="IBM">
                     <File value="IBM-Python">
-                      <p>Python 101 for Data Science</p>
+                      <p>Project Based Learning - FSD</p>
                     </File>
                   </Folder>
-                  <Folder element="AWS" value="AWS">
+                  {/* <Folder element="AWS" value="AWS">
                     <File value="AWS-Cloud">
                       <p>Cloud Foundations (AWS Academy Graduate)</p>
                     </File>
-                  </Folder>
+                  </Folder> */}
                 </Folder>
               </Tree>
             </div>

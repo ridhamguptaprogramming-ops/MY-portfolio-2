@@ -7,7 +7,7 @@ export default function ContactForm() {
   const [stars, setStars] = useState(null);
 
   useEffect(() => {
-    fetch('https://api.github.com/repos/Deadcoder001/React-Personal-Portfolio')
+    fetch('https://api.github.com/repos/Deadcoder001/React-Personal-Portfolio')  
       .then(res => res.json())
       .then(data => setStars(data.stargazers_count))
       .catch(() => setStars(null));
