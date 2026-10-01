@@ -23,13 +23,12 @@ import { Truck } from 'lucide-react';
 // --- Data for the projects ---
 const projectData = [
     {
-        title: 'Sahityaa Sangamm',
+        title: 'ChatFlow',
         description: 'A modern e-commerce platform built with Blade and Laravel.',
-        // Use your Cloudinary video URL here:
         videoUrl: 'https://res.cloudinary.com/dktapziq9/video/upload/v1764394626/1764393871242766_dqfnqn.mp4',
         imageUrl: project1Img, // optional fallback
-        liveUrl: 'https://sahityaasangamm.in',
-        repoUrl: '#',
+        liveUrl: 'https://whatsapp-4-nyet.onrender.com/',
+        repoUrl: 'https://github.com/ridhamguptaprogramming-ops/WhatsApp-4.git',
         tags: ['Blade', 'Laravel', 'MySQL'],
     },
     {
