@@ -44,7 +44,7 @@ export default function Education() {
                 <Folder element="My Certifications" value="Certifications">
                   <Folder element="Cisco" value="Cisco">
                     <File value="Cisco-Intro">
-                      <p>Introduction to Cybersecurity</p>
+                      <p>NASA Open Science 101</p>
                     </File>
                     <File value="Cisco-Jr">
                       <p>Jr. Cybersecurity Analyst</p>

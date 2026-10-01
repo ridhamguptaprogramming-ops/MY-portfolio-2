@@ -32,7 +32,7 @@ export default function Certifications() {
                     </File>
                   </Folder>
                   <Folder element="IBM" value="IBM">
-                    <File value="IBM-Python">
+                    <File value="IBM">
                       <p>Project Based Learning - FSD</p>
                     </File>
                   </Folder>
