@@ -43,7 +43,6 @@ function App() {
 
     gsap.ticker.lagSmoothing(0);
 
-    // 4. Cleanup on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
       lenis.destroy();
