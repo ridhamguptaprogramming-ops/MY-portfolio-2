@@ -86,7 +86,7 @@ export default function ContactForm() {
         {/* Rainbow GitHub Button */}
         <div className="flex justify-center mt-8">
           <a
-            href="https://github.com/Deadcoder001/React-Personal-Portfolio.git"
+            href="https://github.com/ridhamguptaprogramming-ops/MY-portfolio-2"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Star on GitHub"
