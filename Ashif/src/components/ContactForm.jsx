@@ -1,178 +1,73 @@
-import React, { useState } from "react";
-import { cn } from "@/lib/utils";
-import { GridPattern } from "@/components/ui/grid-pattern";
+import { useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import './contact.css'
 
-export default function ContactForm() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+gsap.registerPlugin(ScrollTrigger)
 
-  const [status, setStatus] = useState("");
+export default function Contact() {
+  const sectionRef = useRef(null)
 
-  const handleChange = (e) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
-
-    try {
-      const response = await fetch("https://formspree.io/f/xrbwdkqb", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          _subject: "New Contact Message from Portfolio",
-        }),
-      });
-
-      if (response.ok) {
-        setStatus("Message sent successfully! ✅");
-
-        setForm({
-          name: "",
-          email: "",
-          message: "",
-        });
-
-        setTimeout(() => {
-          setStatus("");
-        }, 5000);
-      } else {
-        setStatus("Something went wrong. Please try again.");
+  useEffect(() => {
+    gsap.fromTo(
+      sectionRef.current.querySelectorAll('.contact__animate'),
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 0.7,
+        stagger: 0.1,
+        ease: 'power2.out',
+        scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
       }
-    } catch (error) {
-      setStatus("Unable to send message. Please try again.");
-    }
-  };
+    )
+  }, [])
 
   return (
-    <div
-      id="contact"
-      className="relative flex w-full items-center justify-center overflow-hidden bg-background pt-16 pb-32 md:pt-24 md:pb-48"
-    >
-      <GridPattern
-        width={30}
-        height={30}
-        x={-1}
-        y={-1}
-        className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]"
-        )}
-      />
-
-      <div className="relative z-10 container mx-auto px-4">
-        <div className="mx-auto max-w-md rounded-lg bg-gray-50 px-8 py-6 shadow-lg">
-          
-          <h2 className="mb-4 text-center text-2xl font-semibold text-gray-800">
-            Contact Me
-          </h2>
-
-          <p className="mb-6 text-center text-sm text-gray-600">
-            Send me a message at{" "}
-            <a
-              href="mailto:ridhamgupta020@gmail.com"
-              className="font-medium text-blue-600 hover:underline"
-            >
-              ridhamgupta020@gmail.com
-            </a>
+    <section id="contact" className="contact" ref={sectionRef}>
+      <div className="container contact__inner">
+        <div className="contact__text contact__animate">
+          <p className="eyebrow">Grow Business? Got Wish.</p>
+          <h2>Think you can Dominate the World?</h2>
+          <p className="contact__sub">
+            Tell us what you do — , whatever it is — and our team will reach out
+            about Any Help we can give.
           </p>
-
-          <form onSubmit={handleSubmit}>
-            
-            {/* Name */}
-            <div className="mb-4">
-              <label
-                className="mb-1 block text-gray-800"
-                htmlFor="name"
-              >
-                Your Name
-              </label>
-
-              <input
-                className="w-full rounded-lg bg-gray-200 px-4 py-2 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                placeholder="Enter your name"
-                type="text"
-                name="name"
-                id="name"
-                value={form.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* Email */}
-            <div className="mb-4">
-              <label
-                className="mb-1 block text-gray-800"
-                htmlFor="email"
-              >
-                Your Email
-              </label>
-
-              <input
-                className="w-full rounded-lg bg-gray-200 px-4 py-2 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                placeholder="Enter your email"
-                type="email"
-                name="email"
-                id="email"
-                value={form.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* Message */}
-            <div className="mb-4">
-              <label
-                className="mb-1 block text-gray-800"
-                htmlFor="message"
-              >
-                Your Message
-              </label>
-
-              <textarea
-                className="w-full rounded-lg bg-gray-200 px-4 py-2 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-300"
-                rows="4"
-                placeholder="Enter your message"
-                name="message"
-                id="message"
-                value={form.message}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* Submit Button */}
-            <button
-              className="w-full rounded-lg bg-yellow-300 px-4 py-2 text-gray-800 transition duration-300 hover:bg-yellow-400 disabled:cursor-not-allowed disabled:opacity-50"
-              type="submit"
-              disabled={status === "Sending..."}
-            >
-              {status === "Sending..." ? "Sending..." : "Send Message"}
-            </button>
-
-            {/* Status Message */}
-            {status && (
-              <p className="mt-4 text-center text-sm font-medium text-gray-700">
-                {status}
-              </p>
-            )}
-
-          </form>
         </div>
+
+        <form
+          className="contact__form contact__animate"
+          action="https://formsubmit.co/ridham.gupta.programming@gmail.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New application submission" />
+          <input type="hidden" name="_autoresponse" value="Thanks for applying! We'll review your submission soon." />
+
+          <div className="contact__row">
+            <input type="text" name="name" placeholder="Your name" required />
+            <input type="email" name="email" placeholder="Email address" required />
+          </div>
+          <input type="text" name="talent" placeholder="What's your talent?" required />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Tell us why you belong on that stage"
+            required
+          />
+          <button type="submit" className="btn btn-primary">Submit Application →</button>
+        </form>
       </div>
-    </div>
-  );
+
+      <footer className="footer">
+        <div className="container footer__inner">
+          <span>© {new Date().getFullYear()} India's Got Latent. All roasts reserved.</span>
+          <div className="footer__links">
+            <a href="#home">Home</a>
+            <a href="#episodes">Episodes</a>
+            <a href="#about">About</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+  )
 }
