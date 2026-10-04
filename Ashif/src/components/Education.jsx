@@ -20,8 +20,8 @@ export default function Education() {
               initialExpandedItems={["Education", "KU", "MC", "BA", "BHS", "Certifications"]}
             >
               <Folder element="My Education" value="Education">
-                <Folder element="Kaziranga University" value="KU">
-                  <File value="KU-MCA">
+                <Folder element="medhavi skills university" value="KU">
+                  <File value="MSU-B.Tech">
                     <p>PW Institute of Innovation (2025 – 2029)</p>
                   </File>
                 </Folder>
