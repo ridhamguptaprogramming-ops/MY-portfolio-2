@@ -9,11 +9,48 @@ export default function ContactForm() {
     message: "",
   });
 
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("Sending...");
+
+    try {
+      const response = await fetch("https://formspree.io/f/xrbwdkqb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          _subject: "New Contact Message from Portfolio",
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully! ✅");
+
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setStatus("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      setStatus("Unable to send message. Please try again.");
+    }
   };
 
   return (
@@ -47,17 +84,7 @@ export default function ContactForm() {
             </a>
           </p>
 
-          <form
-            action="https://formspree.io/f/xrbwdkqb"
-            method="POST"
-          >
-            {/* Send Formspree notification to your configured email */}
-            <input
-              type="hidden"
-              name="_subject"
-              value="New Contact Message from Portfolio"
-            />
-
+          <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label
                 className="mb-1 block text-gray-800"
@@ -89,9 +116,9 @@ export default function ContactForm() {
               <input
                 className="w-full rounded-lg bg-gray-200 px-4 py-2 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-300"
                 placeholder="Enter your email"
+                type="email"
                 name="email"
                 id="email"
-                type="email"
                 value={form.email}
                 onChange={handleChange}
                 required
@@ -119,11 +146,18 @@ export default function ContactForm() {
             </div>
 
             <button
-              className="w-full rounded-lg bg-yellow-300 px-4 py-2 text-gray-800 transition duration-300 hover:bg-yellow-400"
+              className="w-full rounded-lg bg-yellow-300 px-4 py-2 text-gray-800 transition duration-300 hover:bg-yellow-400 disabled:opacity-50"
               type="submit"
+              disabled={status === "Sending..."}
             >
-              Send Message
+              {status === "Sending..." ? "Sending..." : "Send Message"}
             </button>
+
+            {status && (
+              <p className="mt-4 text-center text-sm font-medium text-gray-700">
+                {status}
+              </p>
+            )}
           </form>
         </div>
       </div>
