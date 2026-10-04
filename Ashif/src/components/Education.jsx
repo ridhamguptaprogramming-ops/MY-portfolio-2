@@ -22,10 +22,10 @@ export default function Education() {
               <Folder element="My Education" value="Education">
                 <Folder element="Kaziranga University" value="KU">
                   <File value="KU-MCA">
-                    <p>Masters of Computer Application (2023 – 2025)</p>
+                    <p>PW Institute of Innovation (2025 – 2029)</p>
                   </File>
                 </Folder>
-                <Folder element="M.C College, Barpeta" value="MC">
+                {/* <Folder element="M.C College, Barpeta" value="MC">
                   <File value="MC-BCA">
                     <p>Bachelor of Computer Application (2019 – 2022)</p>
                   </File>
@@ -39,7 +39,7 @@ export default function Education() {
                    <File value="BHS-Matric">
                     <p>Matriculation (2016)</p>
                   </File>                   
-                </Folder>
+                </Folder> */}
               </Folder>
                 <Folder element="My Certifications" value="Certifications">
                   <Folder element="NASA" value="NASA">
